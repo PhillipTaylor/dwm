@@ -1,7 +1,5 @@
 
-===========================
-.h1 Phill's Custom Build of DWM
-============================
+# Phill's Custom Build of DWM #
 
 dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
 
@@ -13,3 +11,10 @@ Each screen contains a small status bar which displays all available tags, the l
 
 dwm draws a small customizable border around windows to indicate the focus state.
 
+![Screenshot](http://dwm.suckless.org/screenshots/dwm-20100318.pngo)
+
+My version differs by:
+
+* being patched to remember where the split is on a per-tag basis
+* thick yellow borders
+* gnome-terminal as the terminal emulator
