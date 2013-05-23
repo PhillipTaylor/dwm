@@ -11,7 +11,7 @@ Each screen contains a small status bar which displays all available tags, the l
 
 dwm draws a small customizable border around windows to indicate the focus state.
 
-![Screenshot](http://dwm.suckless.org/screenshots/dwm-20100318.pngo)
+![Screenshot](http://dwm.suckless.org/screenshots/dwm-20100318.png)
 
 My version differs by:
 
