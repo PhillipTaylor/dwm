@@ -17,8 +17,16 @@ static const Bool topbar            = True;     /* False means bottom bar */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
+	/* class                  instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",                 NULL,       NULL,       0,            True,        -1 },
+	{ "Kate",                 NULL,       NULL,       0,            True,        -1 },
+	{ "gedit",                NULL,       NULL,       0,            True,        -1 },
+	{ "gvim",                 NULL,       NULL,       0,            True,        -1 },
+	{ "VirtualBox",           NULL,       NULL,       0,            True,        -1 },
+	{ "nm-connection-editor", NULL,       NULL,       0,            True,        -1 },
+	{ "skype",                NULL,       NULL,       0,            True,        -1 },
+	{ "Thunderbird",          NULL,       "Authentication Required",       0,            True,        -1 },
+	{ "Calendar",             NULL,       NULL,       0,            True,        -1 },
 	/*{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 }, */
 };
 
@@ -46,7 +54,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[] = { "gnome-terminal", NULL };
+static const char *termcmd[] = { "konsole", NULL };
 static const char *lockcmd[] = { "gnome-screensaver-command --lock", NULL };
 
 static Key keys[] = {
