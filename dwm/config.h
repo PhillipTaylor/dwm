@@ -43,6 +43,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod1Mask
+
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -54,8 +55,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[] = { "konsole", NULL };
-static const char *lockcmd[] = { "gnome-screensaver-command --lock", NULL };
+static const char *termcmd[] = { "/home/ptaylor/bin/konsole", NULL };
+static const char *lockcmd[] = { "/home/ptaylor/bin/dl", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
