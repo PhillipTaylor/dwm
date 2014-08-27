@@ -20,8 +20,8 @@ static const Rule rules[] = {
 	/* class                  instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",                 NULL,       NULL,       0,            True,        -1 },
 	{ "Kate",                 NULL,       NULL,       0,            True,        -1 },
-	{ "gedit",                NULL,       NULL,       0,            True,        -1 },
-	{ "gvim",                 NULL,       NULL,       0,            True,        -1 },
+	{ "Gedit",                NULL,       NULL,       0,            True,        -1 },
+	{ "Gvim",                 NULL,       NULL,       0,            True,        -1 },
 	{ "VirtualBox",           NULL,       NULL,       0,            True,        -1 },
 	{ "nm-connection-editor", NULL,       NULL,       0,            True,        -1 },
 	{ "skype",                NULL,       NULL,       0,            True,        -1 },
@@ -65,8 +65,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
-	{ MODKEY,                       XK_pause,  spawn,          {.v = pausecmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
+	{ MODKEY,                       XK_F10,    spawn,          {.v = pausecmd } },
 	{ MODKEY,                       XK_F11,    spawn,          {.v = vol_down_cmd } },
 	{ MODKEY,                       XK_F12,    spawn,          {.v = vol_up_cmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
