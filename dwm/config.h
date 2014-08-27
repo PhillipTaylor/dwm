@@ -57,12 +57,18 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[] = { "/home/ptaylor/bin/konsole", NULL };
 static const char *lockcmd[] = { "/home/ptaylor/bin/dl", NULL };
+static const char *pausecmd[] = { "/home/ptaylor/bin/pause", NULL };
+static const char *vol_down_cmd[] = { "/home/ptaylor/bin/vol_down", NULL };
+static const char *vol_up_cmd[] = { "/home/ptaylor/bin/vol_up", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
+	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
+	{ MODKEY,                       XK_pause,  spawn,          {.v = pausecmd } },
+	{ MODKEY,                       XK_F11,    spawn,          {.v = vol_down_cmd } },
+	{ MODKEY,                       XK_F12,    spawn,          {.v = vol_up_cmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
