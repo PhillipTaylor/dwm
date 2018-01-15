@@ -55,12 +55,12 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[] = { "/home/ptaylor/bin/konsole", NULL };
-static const char *lockcmd[] = { "/home/ptaylor/bin/dl", NULL };
-static const char *pausecmd[] = { "/home/ptaylor/bin/pause", NULL };
-static const char *vol_down_cmd[] = { "/home/ptaylor/bin/vol_down", NULL };
-static const char *vol_up_cmd[] = { "/home/ptaylor/bin/vol_up", NULL };
-static const char *forward_track[] = { "/home/ptaylor/bin/forward", NULL };
+static const char *termcmd[] = { "/home/phill/bin/konsole", NULL };
+static const char *lockcmd[] = { "/home/phill/bin/dl", NULL };
+static const char *pausecmd[] = { "/home/phill/bin/pause", NULL };
+static const char *vol_down_cmd[] = { "/home/phill/bin/vol_down", NULL };
+static const char *vol_up_cmd[] = { "/home/phill/bin/vol_up", NULL };
+static const char *forward_track[] = { "/home/phill/bin/forward", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
