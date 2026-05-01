@@ -1,0 +1,14 @@
+[package]
+name = "dmenu"
+version = "4.3.1"
+edition.workspace = true
+license.workspace = true
+description = "Dynamic menu (Rust port)"
+
+[[bin]]
+name = "dmenu"
+path = "src/main.rs"
+
+[dependencies]
+x11rb = { workspace = true }
+libc = { workspace = true }
