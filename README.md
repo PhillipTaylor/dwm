@@ -18,6 +18,7 @@ I recently used Augment and Opus 4.7 to rewrite the codebase in Rust.
 
 How to use this build of dwm:
 
+`
 ctrl + shift + q = exit dwm (return to login screen)
 
 alt + p = open dwm to run a new command
@@ -44,6 +45,7 @@ alt + f11 = volume up
 alt + left click = put window into floating mode and drag/move.
 alt + middle click = put back in the tiling stack
 alt + right click = resize floating window
+`
 
 ![Screenshot](screenshot.png)
 
