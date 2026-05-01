@@ -3,12 +3,23 @@ name = "dwm"
 version = "5.8.2"
 edition.workspace = true
 license.workspace = true
-description = "Dynamic window manager (Rust port)"
+description = "Dynamic window manager (Rust port, Wayland compositor)"
 
 [[bin]]
 name = "dwm"
 path = "src/main.rs"
 
 [dependencies]
-x11rb = { workspace = true }
 libc = { workspace = true }
+bitflags = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+smithay = { workspace = true }
+calloop = { workspace = true }
+input = { workspace = true }
+xkbcommon = { workspace = true }
+fontdue = { workspace = true }
+smithay-drm-extras = { workspace = true }
+drm = { workspace = true }
+gbm = { workspace = true }
+rustix = { workspace = true }

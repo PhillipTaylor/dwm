@@ -1,7 +1,16 @@
 
 # Phill's Custom Build of DWM #
 
-dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+This is a Rust port of suckless dwm + dmenu, ported from X11 to Wayland.
+The compositor is built on the [smithay](https://crates.io/crates/smithay)
+framework and runs natively as a Wayland compositor (no X server required).
+
+**Linux-only.** The compositor depends on `libudev`, `libdrm`, `libgbm`,
+`libinput`, `libseat`, `libxkbcommon` and a working DRM/KMS stack; it cannot
+be built or run on macOS or Windows. The menu (dmenu) only requires a
+Wayland session that supports `wlr-layer-shell-unstable-v1`.
+
+dwm is a dynamic window manager. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
 
 In tiled layout windows are managed in a master and stacking area. The master area contains the window which currently needs most attention, whereas the stacking area contains all other windows. In monocle layout all windows are maximised to the screen size. In floating layout windows can be resized and moved freely. Dialog windows are always managed floating, regardless of the layout applied.
 
