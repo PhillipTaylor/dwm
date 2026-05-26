@@ -593,7 +593,7 @@ fn update_status(st: &mut State) -> Result<(), Box<dyn Error>> {
     if txt.is_empty() {
         st.stext = format!("dwm-{}", VERSION).into_bytes();
     } else {
-        st.stext = txt;
+        st.stext = draw::utf8_to_drawable(&txt);
     }
     if let Some(m) = st.selmon {
         drawbar(st, m)?;
@@ -667,17 +667,19 @@ fn update_geom(st: &mut State) -> Result<bool, Box<dyn Error>> {
                 cleanup_mon(st, m)?;
             }
         }
-    } else if st.mons_head.is_none() {
-        let m = alloc_monitor(st);
-        st.mons_head = Some(m);
-    }
-    if let Some(m) = st.mons_head {
-        let mon = &mut st.mons[m];
-        if mon.mw != st.sw || mon.mh != st.sh {
-            dirty = true;
-            mon.mw = st.sw; mon.ww = st.sw;
-            mon.mh = st.sh; mon.wh = st.sh;
-            update_bar_pos(st, m);
+    } else {
+        if st.mons_head.is_none() {
+            let m = alloc_monitor(st);
+            st.mons_head = Some(m);
+        }
+        if let Some(m) = st.mons_head {
+            let mon = &mut st.mons[m];
+            if mon.mw != st.sw || mon.mh != st.sh {
+                dirty = true;
+                mon.mw = st.sw; mon.ww = st.sw;
+                mon.mh = st.sh; mon.wh = st.sh;
+                update_bar_pos(st, m);
+            }
         }
     }
     if dirty {
@@ -1339,7 +1341,7 @@ fn update_title(st: &mut State, c: CId) -> Result<(), Box<dyn Error>> {
     if name.is_empty() {
         name = BROKEN.to_vec();
     }
-    st.clients[c].name = name;
+    st.clients[c].name = draw::utf8_to_drawable(&name);
     Ok(())
 }
 

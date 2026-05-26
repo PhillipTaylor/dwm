@@ -98,6 +98,31 @@ pub fn get_color(conn: &RustConnection, screen_num: usize, colstr: &str)
     Ok(r.pixel)
 }
 
+/// Transcode UTF-8 input into a byte buffer suitable for X11 ImageText8
+/// with a bitmap font. _NET_WM_NAME and the root WM_NAME are UTF-8, but
+/// ImageText8 only consumes one byte per glyph, so multi-byte sequences
+/// such as the em-dash in "Page — App" otherwise render as the font's
+/// default-character glyph. Common dash variants are mapped to ASCII '-'.
+pub fn utf8_to_drawable(input: &[u8]) -> Vec<u8> {
+    let s = match std::str::from_utf8(input) {
+        Ok(s) => s,
+        Err(_) => return input.to_vec(),
+    };
+    let mut out = Vec::with_capacity(s.len());
+    for c in s.chars() {
+        match c as u32 {
+            0x00AD | 0x2010..=0x2015 | 0x2212 | 0xFE58 | 0xFE63 | 0xFF0D => out.push(b'-'),
+            0x2026 => out.extend_from_slice(b"..."),
+            0x2018 | 0x2019 | 0x201A | 0x201B => out.push(b'\''),
+            0x201C | 0x201D | 0x201E | 0x201F => out.push(b'"'),
+            0x00A0 | 0x2002..=0x200A | 0x202F | 0x205F => out.push(b' '),
+            v if v < 0x100 => out.push(v as u8),
+            _ => out.push(b'?'),
+        }
+    }
+    out
+}
+
 pub fn textnw(dc: &Dc, text: &[u8], len: usize) -> i32 {
     let n = len.min(text.len());
     let mut w = 0i32;
