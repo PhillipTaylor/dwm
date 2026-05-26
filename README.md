@@ -1,20 +1,49 @@
 
 # Phill's Custom Build of DWM #
 
-dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+dwm is a minimal tiling window manager for X11.
 
-In tiled layout windows are managed in a master and stacking area. The master area contains the window which currently needs most attention, whereas the stacking area contains all other windows. In monocle layout all windows are maximised to the screen size. In floating layout windows can be resized and moved freely. Dialog windows are always managed floating, regardless of the layout applied.
+It was created by suckless. The homepage is here: https://dwm.suckless.org/
 
-Windows are grouped by tags. Each window can be tagged with one or multiple tags. Selecting certain tags displays all windows with these tags.
+I forked the dwm repo in 2013 and applied a few custom patches:
 
-Each screen contains a small status bar which displays all available tags, the layout, the number of visible windows, the title of the focused window, and the text read from the root window name property, if the screen is focused. A floating window is indicated with an empty square and a maximised floating window is indicated with a filled square before the windows title. The selected tags are indicated with a different color. The tags of the focused window are indicated with a filled square in the top left corner. The tags which are applied to one or more windows are indicated with an empty square in the top left corner.
+1. Bright thick yellow borders
+2. pertag diff
+3. (I forget, maybe a.. ) terminal gap diff
+3. Hardcoded keybindings for many scripts
 
-dwm draws a small customizable border around windows to indicate the focus state.
+I have used this interface 35 hours a week for 13+ years.
 
-![Screenshot](http://dwm.suckless.org/screenshots/dwm-20100318.png)
+I recently used Augment and Opus 4.7 to rewrite the codebase in Rust.
 
-My version differs by:
+How to use this build of dwm:
 
-* being patched to remember where the split is on a per-tag basis
-* thick yellow borders
-* gnome-terminal as the terminal emulator
+ctrl + shift + q = exit dwm (return to login screen)
+
+alt + p = open dwm to run a new command
+alt + shift + enter = open a new terminal (~/bin/konsole)
+
+alt + j or alt-k = cycle through open windows on the current desktop
+alt + enter = swap the primary and secondary windows.
+
+alt + 1, alt + 2, alt + 3 = cycle through desktops
+alt + shift +1 etc = move window to new desktop
+alt + 0 = all windows on a single desktop
+
+alt + m, alt + t = switch desktop between single app/tiling layout modes
+alt + b = toggle status bar
+
+alt + , = switch focus to secondary monitor
+alt + shift + , = move window to secondary monitor
+
+alt + shift + l = screen lock
+
+alt + f10 = volume down
+alt + f11 = volume up
+
+alt + left click = put window into floating mode and drag/move.
+alt + middle click = put back in the tiling stack
+alt + right click = resize floating window
+
+![Screenshot](screenshot.png)
+
